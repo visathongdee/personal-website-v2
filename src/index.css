@@ -1,68 +1,64 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@font-face {
+  font-family: EditorialNew;
+  src: url("/src/assets/fonts/PPEditorialNew-Italic.otf") format("opentype");
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-style: italic;
+}
+@font-face {
+  font-family: EditorialNew;
+  src: url("/src/assets/fonts/PPEditorialNew-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: EditorialNew;
+  src: url("/src/assets/fonts/PPEditorialNew-Ultrabold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: EditorialNew;
+  src: url("/src/assets/fonts/PPEditorialNew-UltraboldItalic.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: EditorialNew;
+  src: url("/src/assets/fonts/PPEditorialNew-Ultralight.otf") format("opentype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: EditorialNew;
+  src: url("/src/assets/fonts/PPEditorialNew-UltralightItalic.otf")
+    format("opentype");
+  font-weight: 100;
+  font-style: italic;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@theme {
+  --color-white: #f6f6f6;
+  --color-dark: #222222;
+  --color-lightgrey: #a2a2a2;
+  --font-default: "EditorialNew", serif;
+  --font-display: "Inter", sans-serif;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: xx-large;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+  font-size: x-large;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body {
+  font-family: var(--font-default);
+  font-weight: 200;
+  background-color: var(--color-white);
+  color: var(--color-dark);
 }
