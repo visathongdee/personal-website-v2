@@ -27,22 +27,28 @@ export const Experience = () => {
     },
   ];
   return (
-    <div className="mx-auto mt-30 w-1/2">
-      <h2 className="font-display font-light text-2xl my-5">experience</h2>
+    <section id="experience">
+      <h2 className="font-display font-light text-xl md:text-2xl">
+        experience
+      </h2>
 
       {experiences.map(({ position, company, date }) => {
         return (
-          <div className="my-7">
-            <h2 className="text-base">
-              <span className="text-(--color-dark)">{position} </span>
-              <span className="text-(--color-lightgrey)">@ {company}</span>
-            </h2>
-            <p className="font-display font-light text-(--color-lightgrey)">
+          <div className="my-3 md:my-7">
+            <div className="flex flex-col md:flex-row gap-1 md:gap-2">
+              <h2 className="text-xl md:text-2xl text-(--color-dark)">
+                {position}
+              </h2>
+              <h2 className="text-xl md:text-2xl text-(--color-grey)">
+                @ {company}
+              </h2>
+            </div>
+            <p className="font-display font-light text-(--color-lightgrey) text-sm md:text-base mt-1">
               {date}
             </p>
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };

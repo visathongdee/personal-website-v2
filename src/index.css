@@ -42,18 +42,11 @@
 
 @theme {
   --color-white: #f6f6f6;
-  --color-dark: #222222;
+  --color-dark: #373737;
+  --color-grey: #828282;
   --color-lightgrey: #a2a2a2;
   --font-default: "EditorialNew", serif;
   --font-display: "Inter", sans-serif;
-}
-
-h1 {
-  font-size: xx-large;
-}
-
-h2 {
-  font-size: x-large;
 }
 
 body {
@@ -61,4 +54,8 @@ body {
   font-weight: 200;
   background-color: var(--color-white);
   color: var(--color-dark);
+}
+
+section {
+  scroll-margin-top: 100px; /* modern, preferred */
 }

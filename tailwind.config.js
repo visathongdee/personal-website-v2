@@ -10,6 +10,7 @@ export default {
       colors: {
         white: "var(--color-white)",
         dark: "var(--color-dark)",
+        grey: "var(--color-grey)",
         lightgrey: "var(--color-lightgrey)",
       },
     },
