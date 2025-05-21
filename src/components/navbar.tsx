@@ -1,16 +1,32 @@
-export const NavBar = () => (
-  <nav className="sticky top-0 content-start bg-white z-10 flex justify-center gap-5 py-4 font-display text-lg md:text-xl ">
-    <a href="#aboutMe" className="hover:underline text-[var(--color-dark)]">
-      about me
-    </a>
-    <a href="#experience" className="hover:underline text-[var(--color-dark)]">
-      experience
-    </a>
-    <a href="#projects" className="hover:underline text-[var(--color-dark)]">
-      projects
-    </a>
-    <a href="#contact" className="hover:underline text-[var(--color-dark)]">
-      contacts
-    </a>
-  </nav>
-);
+export const NavBar = () => {
+  return (
+    <div className="w-full md:w-1/2 mx-auto md:px-0 pt-15 hidden min-[350px]:block">
+      <nav className="bg-white z-10 flex gap-3 md:gap-10 font-display text-base md:text-2xl mx-auto ">
+        <a
+          href="#aboutMe"
+          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300 ease-in-out"
+        >
+          about me
+        </a>
+        <a
+          href="#experience"
+          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300"
+        >
+          experience
+        </a>
+        <a
+          href="#projects"
+          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300"
+        >
+          projects
+        </a>
+        <a
+          href="#contact"
+          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300"
+        >
+          contacts
+        </a>
+      </nav>
+    </div>
+  );
+};

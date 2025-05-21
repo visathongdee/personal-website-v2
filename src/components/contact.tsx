@@ -14,7 +14,7 @@ export const Contact = () => {
     },
   ];
   return (
-    <section id="contact">
+    <section id="contact" className="animate-fade-in">
       {contacts.map(({ social, handle }) => {
         return (
           <div className="my-0 md:my-1">

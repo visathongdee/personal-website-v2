@@ -27,7 +27,7 @@ export const Experience = () => {
     },
   ];
   return (
-    <section id="experience">
+    <section id="experience" className="animate-fade-in">
       <h2 className="font-display font-light text-xl md:text-2xl">
         experience
       </h2>

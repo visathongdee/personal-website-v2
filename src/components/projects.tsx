@@ -27,7 +27,7 @@ export const Projects = () => {
     },
   ];
   return (
-    <section id="projects">
+    <section id="projects" className="animate-fade-in">
       <h2 className="font-display font-light text-xl md:text-2xl">projects</h2>
 
       {projects.map(({ name, description, skills }) => {

@@ -47,6 +47,19 @@
   --color-lightgrey: #a2a2a2;
   --font-default: "EditorialNew", serif;
   --font-display: "Inter", sans-serif;
+
+  --animate-fade-in: fade-in 1s ease-in-out forwards;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 body {

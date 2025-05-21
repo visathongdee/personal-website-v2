@@ -1,6 +1,6 @@
 export const AboutMe = () => {
   return (
-    <section id="aboutMe">
+    <section id="aboutMe" className="animate-fade-in">
       <h1 className="text-2xl/8 md:text-4xl/12">
         <span className="text-(--color-lightgrey)">Bello 👋, I’m </span>
         <span className="text-(--color-dark)">Visa 💳 </span>
