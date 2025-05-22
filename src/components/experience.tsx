@@ -64,31 +64,33 @@ export const Experience = () => {
         experience
       </h2>
 
-      {experiences.map(
-        ({ position, company, date, styling, link, description }, i) => {
-          return (
-            <div key={i} className="my-5 md:my-7">
-              <div className="flex flex-col md:flex-row gap-1 md:gap-2">
-                <h2 className="text-xl md:text-2xl text-(--color-dark)">
-                  {position}
-                </h2>
-                <a
-                  href={link}
-                  className={`text-xl md:text-2xl text-(--color-grey) ${styling}`}
-                >
-                  @ {company}
-                </a>
+      <div className="flex flex-col ">
+        {experiences.map(
+          ({ position, company, date, styling, link, description }, i) => {
+            return (
+              <div key={i} className="my-5 md:my-7">
+                <div className="flex flex-col md:flex-row gap-1 md:gap-2">
+                  <h2 className="text-xl md:text-2xl text-(--color-dark)">
+                    {position}
+                  </h2>
+                  <a
+                    href={link}
+                    className={`text-xl md:text-2xl text-(--color-grey) ${styling}`}
+                  >
+                    @ {company}
+                  </a>
+                </div>
+                <p className="font-display font-light text-(--color-grey) text-sm md:text-base mt-1">
+                  {date}
+                </p>
+                <p className="font-display font-light text-(--color-lightgrey) text-sm md:text-base mt-1">
+                  {description}
+                </p>
               </div>
-              <p className="font-display font-light text-(--color-grey) text-sm md:text-base mt-1">
-                {date}
-              </p>
-              <p className="font-display font-light text-(--color-lightgrey) text-sm md:text-base mt-1">
-                {description}
-              </p>
-            </div>
-          );
-        }
-      )}
+            );
+          }
+        )}
+      </div>
     </section>
   );
 };
