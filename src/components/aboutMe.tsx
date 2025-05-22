@@ -2,7 +2,7 @@ export const AboutMe = () => {
   return (
     <section id="aboutMe" className="animate-fade-in">
       <h1 className="text-2xl/8 md:text-4xl/12">
-        <span className="text-(--color-lightgrey) underline decoration-dotted hover:text-(--color-grey) transition duration-300 ease-in-out">
+        <span className="text-(--color-lightgrey) hover:animate-bounce cursor-minion md:underline decoration-dotted hover:decoration-yellow-500 hover:text-(--color-grey) transition-all duration-300 ease-in-out inline-block">
           Bello
         </span>
         <span className="text-(--color-lightgrey)"> 👋, I’m </span>

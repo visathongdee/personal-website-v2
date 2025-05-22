@@ -68,6 +68,14 @@
   }
 }
 
+.cursor-minion {
+  cursor: url("assets/icons/minion.png"), auto;
+}
+
+::selection {
+  background: #e3e3e3;
+}
+
 body {
   font-family: var(--font-default);
   font-weight: 200;

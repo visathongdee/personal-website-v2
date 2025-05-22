@@ -148,7 +148,7 @@ export const Projects = () => {
                           key={i}
                           className="relative group inline-block mr-3 md:mr-5"
                         >
-                          <span className="text-base md:text-xl">
+                          <span className="text-base md:text-xl inline-block hover:-translate-y-0.5 duration-300 ">
                             {skill.icon}
                           </span>
                           <span className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-10 px-2 py-1 text-sm text-white bg-(--color-grey) rounded opacity-0 group-hover:opacity-100 transition-opacity">
