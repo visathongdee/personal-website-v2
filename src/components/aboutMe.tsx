@@ -2,17 +2,20 @@ export const AboutMe = () => {
   return (
     <section id="aboutMe" className="animate-fade-in">
       <h1 className="text-2xl/8 md:text-4xl/12">
-        <span className="text-(--color-lightgrey) underline decoration-dotted hover:text-(--color-grey) transition duration-300 ease-in-out hover:-translate-y-0.5 inline-block">
+        <span className="text-(--color-lightgrey) underline decoration-dotted hover:text-(--color-grey) transition duration-300 ease-in-out">
           Bello
         </span>
         <span className="text-(--color-lightgrey)"> 👋, I’m </span>
-        <span className="text-(--color-dark)">Visa 💳 </span>
+        <span className="text-(--color-dark)">Visa Thongdee 💳 </span>
         <span className="text-(--color-lightgrey)">and welcome to my </span>
         <span className="text-(--color-dark)">website</span>
         <span className="text-(--color-lightgrey)">
-          ! I recently graduated with a B.S. in{" "}
+          ! I recently graduated with a{" "}
         </span>
-        <span className="text-(--color-lightgrey)">Computer Science from </span>
+        <span className="text-(--color-dark)">B.S. in Computer Science </span>
+        <span className="text-(--color-lightgrey)">
+          with a concentration in Software Engineering and Machine Learning from{" "}
+        </span>
         <a
           href="https://www.purdue.edu/"
           className="text-(--color-dark) hover:underline underline-offset-4 decoration-dashed decoration-yellow-500 transition duration-300 ease-in-out hover:-translate-y-0.5 inline-block"
