@@ -18,9 +18,9 @@ export const Contact = () => {
   ];
   return (
     <section id="contact" className="animate-fade-in">
-      {contacts.map(({ social, handle, link }) => {
+      {contacts.map(({ social, handle, link }, i) => {
         return (
-          <div className="my-0 md:my-1">
+          <div key={i} className="my-0 md:my-1">
             <div className="flex justify-between items-center flex-wrap flex-row md:flex-row gap-1 md:gap-2">
               <h2 className="font-display font-light text-base md:text-xl text-(--color-dark)">
                 {social}

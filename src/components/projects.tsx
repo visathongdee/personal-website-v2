@@ -86,6 +86,7 @@ export const Projects = () => {
         "My current personal website to showcase my skill, experiences, and projects.",
       link: "https://visathongdee.com",
       githubLink: "https://github.com/visathongdee/personal-website-v2",
+      picture: "src/assets/pictures/portfolioV2.png",
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
@@ -109,9 +110,12 @@ export const Projects = () => {
         ) => {
           const isExpanded = expandedIndex === index;
           return (
-            <div className="flex flex-row justify-start gap-2 width-full">
+            <div
+              key={index}
+              className="flex flex-row justify-start gap-2 width-full"
+            >
               <IoIosArrowForward
-                className={`w-6 h-6 my-5 md:my-7 flex-shrink-0 text-(--color-grey) transition-transform ease-in-out duration-300 hover:-translate-y-0.5 ${
+                className={`w-4 h-4 md:w-6 md:h-6 my-5 md:my-7 flex-shrink-0 text-(--color-grey) transition-transform ease-in-out duration-300 hover:-translate-y-0.5 ${
                   isExpanded ? "rotate-90" : ""
                 }`}
                 onClick={() => setExpandedIndex(isExpanded ? null : index)}
@@ -151,7 +155,7 @@ export const Projects = () => {
                           <span className="text-base md:text-xl inline-block hover:-translate-y-0.5 duration-300 ">
                             {skill.icon}
                           </span>
-                          <span className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-10 px-2 py-1 text-sm text-white bg-(--color-grey) rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                          <span className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-7 md:bottom-10 px-2 py-1 text-sm text-white bg-(--color-grey) rounded hidden group-hover:block transition-all">
                             {skill.name}
                           </span>
                         </div>
