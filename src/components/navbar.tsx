@@ -4,25 +4,25 @@ export const NavBar = () => {
       <nav className="bg-white z-10 flex gap-3 md:gap-10 font-display text-base md:text-2xl mx-auto ">
         <a
           href="#aboutMe"
-          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300 ease-in-out"
+          className="hover:text-(--color-dark) text-(--color-lightgrey) transition-colors duration-300 ease-in-out"
         >
           about me
         </a>
         <a
           href="#experience"
-          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300"
+          className="hover:text-(--color-dark) text-(--color-lightgrey) transition-colors duration-300 ease-in-out"
         >
           experience
         </a>
         <a
           href="#projects"
-          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300"
+          className="hover:text-(--color-dark) text-(--color-lightgrey) transition-colors duration-300 ease-in-out"
         >
           projects
         </a>
         <a
           href="#contact"
-          className="hover:text-[var(--color-dark)] text-[var(--color-lightgrey)] transition-colors duration-300"
+          className="hover:text-(--color-dark) text-(--color-lightgrey) transition-colors duration-300 ease-in-out"
         >
           contacts
         </a>
