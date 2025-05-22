@@ -14,8 +14,14 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { MdArrowOutward } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { ChartJsIcon } from "../assets/icons/ChartJsIcon";
+import wanderImage from "../assets/pictures/wanderBorder.png";
+import statifyImage from "../assets/pictures/statifyBorderSixMonths.png";
+import portfolioV1Image from "../assets/pictures/portfolioV1.png";
+import portfolioV2Image from "../assets/pictures/portfolioV2.png";
 
 export const Projects = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   const projects: {
     name: string;
     nameStyling?: string;
@@ -32,7 +38,7 @@ export const Projects = () => {
       description:
         "A web app that generates a personalized music playlist for a user's road or plane trip from travel destination and music preferences determined through a preference quiz and the user's Spotify data.",
       githubLink: "https://github.com/akshayakumar12/wander/",
-      picture: "src/assets/pictures/wanderBorder.png",
+      picture: wanderImage,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiMui />, name: "Materials UI" },
@@ -49,7 +55,7 @@ export const Projects = () => {
       description:
         "Summarize your spotify listening activity by top artists, tracks, and genres",
       githubLink: "https://github.com/visathongdee/statify",
-      picture: "src/assets/pictures/statifyBorderSixMonths.png",
+      picture: statifyImage,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
@@ -68,9 +74,9 @@ export const Projects = () => {
         "hover:underline underline-offset-4 decoration-rose-400 transition duration-300 hover:-translate-y-0.5",
       description:
         "My (old) personal website to showcase my skill, experiences, and projects.",
-      link: "https://visathongdee.com",
+      link: "https://v1.visathongdee.com",
       githubLink: "https://github.com/visathongdee/personal-website",
-      picture: "src/assets/pictures/portfolioV1Border.png",
+      picture: portfolioV1Image,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
@@ -86,7 +92,7 @@ export const Projects = () => {
         "My current personal website to showcase my skill, experiences, and projects.",
       link: "https://visathongdee.com",
       githubLink: "https://github.com/visathongdee/personal-website-v2",
-      picture: "src/assets/pictures/portfolioV2.png",
+      picture: portfolioV2Image,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
@@ -96,8 +102,6 @@ export const Projects = () => {
       ],
     },
   ];
-
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
     <section id="projects" className="animate-fade-in">
