@@ -1,5 +1,5 @@
 import { useState, type ReactElement } from "react";
-import { FaGithub, FaReact, FaSpotify } from "react-icons/fa";
+import { FaGithub, FaReact, FaSpotify, FaYelp } from "react-icons/fa";
 import {
   SiMui,
   SiGooglemaps,
@@ -8,6 +8,7 @@ import {
   SiVite,
   SiExpress,
   SiFlask,
+  SiSqlite,
 } from "react-icons/si";
 import { IoLogoFirebase, IoLogoVercel } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
@@ -18,6 +19,7 @@ import wanderImage from "../assets/pictures/wanderBorder.png";
 import statifyImage from "../assets/pictures/statifyBorderSixMonths.png";
 import portfolioV1Image from "../assets/pictures/portfolioV1.png";
 import portfolioV2Image from "../assets/pictures/portfolioV2.png";
+import rendezviewImage from "../assets/pictures/rendezview.png";
 
 export const Projects = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
@@ -43,8 +45,26 @@ export const Projects = () => {
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiMui />, name: "Materials UI" },
         { icon: <IoLogoFirebase />, name: "Firebase" },
-        { icon: <SiFlask />, name: "Flask" },
         { icon: <FaSpotify />, name: "Spotify API" },
+        { icon: <SiGooglemaps />, name: "Google Maps API" },
+      ],
+    },
+    {
+      name: "RendezView",
+      nameStyling:
+        "hover:underline underline-offset-4 decoration-dotted decoration-sky-400 transition duration-300 hover:-translate-y-0.5",
+      description:
+        "A web app that helps users discover local events by gathering listings from various sources and recommending them based on their interests, location, and past activity.",
+      githubLink: "https://github.com/goodvid/rendezview/",
+      picture: rendezviewImage,
+      skills: [
+        { icon: <FaReact />, name: "ReactJS" },
+        { icon: <SiTypescript />, name: "Typescript" },
+        { icon: <SiMui />, name: "Material UI" },
+        { icon: <RiTailwindCssFill />, name: "TailwindCSS" },
+        { icon: <SiFlask />, name: "Flask" },
+        { icon: <SiSqlite />, name: "SQLite" },
+        { icon: <FaYelp />, name: "Yelp API" },
         { icon: <SiGooglemaps />, name: "Google Maps API" },
       ],
     },
@@ -53,7 +73,7 @@ export const Projects = () => {
       nameStyling:
         "hover:underline underline-offset-4 decoration-wavy decoration-green-500 transition duration-300 hover:-translate-y-0.5",
       description:
-        "Summarize your spotify listening activity by top artists, tracks, and genres",
+        "A web app that breaks down your Spotify listening trends by top artists, tracks, and genres, with filters for all-time, last 6 months, and last 4 weeks.",
       githubLink: "https://github.com/visathongdee/statify",
       picture: statifyImage,
       skills: [
