@@ -206,6 +206,7 @@ export const Projects = () => {
                     <img
                       src={picture}
                       alt={`${name} screenshot`}
+                      loading="lazy"
                       className="object-cover w-full h-auto transition-opacity duration-500 ease-in-out"
                     />
                   </div>
