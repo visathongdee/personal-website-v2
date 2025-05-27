@@ -16,6 +16,12 @@ import { MdArrowOutward } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { ChartJsIcon } from "../assets/icons/ChartJsIcon";
 
+import wanderImage from "/pictures/wander.webp";
+import statifyImage from "/pictures/statify.webp";
+import portfolioV1Image from "/pictures/portfolioV1.webp";
+import portfolioV2Image from "/pictures/portfolioV2.webp";
+import rendezviewImage from "/pictures/rendezview.webp";
+
 export const Projects = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
@@ -35,7 +41,7 @@ export const Projects = () => {
       description:
         "A web app that generates a personalized music playlist for a user's road or plane trip from travel destination and music preferences determined through a preference quiz and the user's Spotify data.",
       githubLink: "https://github.com/akshayakumar12/wander/",
-      picture: "/pictures/wanderBorder.png",
+      picture: wanderImage,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiMui />, name: "Materials UI" },
@@ -51,7 +57,7 @@ export const Projects = () => {
       description:
         "A web app that helps users discover local events by gathering listings from various sources and recommending them based on their interests, location, and past activity.",
       githubLink: "https://github.com/goodvid/rendezview/",
-      picture: "/pictures/rendezview.png",
+      picture: rendezviewImage,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
@@ -70,7 +76,7 @@ export const Projects = () => {
       description:
         "A web app that breaks down your Spotify listening trends by top artists, tracks, and genres, with filters for all-time, last 6 months, and last 4 weeks.",
       githubLink: "https://github.com/visathongdee/statify",
-      picture: "/pictures/statify.png",
+      picture: statifyImage,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
@@ -91,7 +97,7 @@ export const Projects = () => {
         "My (old) personal website to showcase my skill, experiences, and projects.",
       link: "https://v1.visathongdee.com",
       githubLink: "https://github.com/visathongdee/personal-website",
-      picture: "/pictures/portfolioV1.png",
+      picture: portfolioV1Image,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
@@ -107,7 +113,7 @@ export const Projects = () => {
         "My current personal website to showcase my skill, experiences, and projects.",
       link: "https://visathongdee.com",
       githubLink: "https://github.com/visathongdee/personal-website-v2",
-      picture: "/pictures/portfolioV2.png",
+      picture: portfolioV2Image,
       skills: [
         { icon: <FaReact />, name: "ReactJS" },
         { icon: <SiTypescript />, name: "Typescript" },
