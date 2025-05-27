@@ -1,4 +1,4 @@
-import { useState, type ReactElement } from "react";
+import { type ReactElement } from "react";
 import { FaGithub, FaReact, FaSpotify, FaYelp } from "react-icons/fa";
 import {
   SiMui,
