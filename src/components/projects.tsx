@@ -15,11 +15,11 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { MdArrowOutward } from "react-icons/md";
 import { IoIosArrowForward } from "react-icons/io";
 import { ChartJsIcon } from "../assets/icons/ChartJsIcon";
-import wanderImage from "../assets/pictures/wanderBorder.png";
-import statifyImage from "../assets/pictures/statifyBorderSixMonths.png";
-import portfolioV1Image from "../assets/pictures/portfolioV1.png";
-import portfolioV2Image from "../assets/pictures/portfolioV2.png";
-import rendezviewImage from "../assets/pictures/rendezview.png";
+import wanderImage from "/pictures/wanderBorder.png";
+import statifyImage from "/pictures/statifyBorderSixMonths.png";
+import portfolioV1Image from "/pictures/portfolioV1.png";
+import portfolioV2Image from "/pictures/portfolioV2.png";
+import rendezviewImage from "/pictures/rendezview.png";
 
 export const Projects = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
