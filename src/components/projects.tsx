@@ -13,7 +13,6 @@ import {
 import { IoLogoFirebase, IoLogoVercel } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { MdArrowOutward } from "react-icons/md";
-import { IoIosArrowForward } from "react-icons/io";
 import { ChartJsIcon } from "../assets/icons/ChartJsIcon";
 
 import wanderImage from "/pictures/wander.webp";
@@ -23,8 +22,6 @@ import portfolioV2Image from "/pictures/portfolioV2.webp";
 import rendezviewImage from "/pictures/rendezview.webp";
 
 export const Projects = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-
   const projects: {
     name: string;
     nameStyling?: string;
@@ -123,7 +120,6 @@ export const Projects = () => {
       ],
     },
   ];
-
   return (
     <section id="projects" className="animate-fade-in">
       <h2 className="font-display font-light text-xl md:text-2xl">projects</h2>
@@ -133,18 +129,11 @@ export const Projects = () => {
           { name, nameStyling, description, skills, link, githubLink, picture },
           index
         ) => {
-          const isExpanded = expandedIndex === index;
           return (
             <div
               key={index}
               className="flex flex-row justify-start gap-2 width-full"
             >
-              <IoIosArrowForward
-                className={`w-4 h-4 md:w-6 md:h-6 my-5 md:my-7 flex-shrink-0 text-(--color-grey) transition-transform ease-in-out duration-300 hover:-translate-y-0.5 ${
-                  isExpanded ? "rotate-90" : ""
-                }`}
-                onClick={() => setExpandedIndex(isExpanded ? null : index)}
-              />
               <div className="flex flex-col w-full">
                 {/* top line (name + skills) */}
                 <div className="my-5 md:my-7 w-full flex flex-col justify-between">
@@ -197,16 +186,13 @@ export const Projects = () => {
                 {/* picture */}
                 {picture && (
                   <div
-                    className={`transition-all duration-500 ease-in-out overflow-hidden flex justify-center ${
-                      isExpanded
-                        ? "max-h-full opacity-100 translate-y-0 mt-3"
-                        : "max-h-0 opacity-0 -translate-y-3"
-                    }`}
+                    className={
+                      "transition-all duration-500 ease-in-out overflow-hidden flex justify-center"
+                    }
                   >
                     <img
                       src={picture}
                       alt={`${name} screenshot`}
-                      loading="lazy"
                       className="object-cover w-full h-auto transition-opacity duration-500 ease-in-out"
                     />
                   </div>
