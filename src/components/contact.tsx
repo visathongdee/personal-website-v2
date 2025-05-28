@@ -1,4 +1,10 @@
+import { useInView } from "motion/react";
+import { useRef } from "react";
+
 export const Contact = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   const contacts: { social: string; handle: string; link: string }[] = [
     {
       social: "email",
@@ -16,8 +22,15 @@ export const Contact = () => {
       link: "https://linkedin.com/in/visathongdee",
     },
   ];
+
   return (
-    <section id="contact" className="animate-fade-in">
+    <section
+      id="contact"
+      ref={ref}
+      className={`transition-all duration-1000 ease-in-out transform ${
+        isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+      }`}
+    >
       {contacts.map(({ social, handle, link }, i) => {
         return (
           <div key={i} className="my-0 md:my-1">
@@ -28,7 +41,7 @@ export const Contact = () => {
               <hr className="min-[320px]:block hidden flex-grow mx-3 border-t border-(--color-lightgrey)" />
               <a
                 href={link}
-                className="text-lg md:text-xl text-(--color-grey) underline hover:text-(--color-grey) text-(--color-lightgrey) transition duration-300 ease-in-out hover:-translate-y-0.5"
+                className="text-lg md:text-xl underline hover:text-(--color-grey) text-(--color-lightgrey) transition duration-300 ease-in-out hover:-translate-y-0.5"
               >
                 {handle}
               </a>

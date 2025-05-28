@@ -1,4 +1,10 @@
+import { useInView } from "motion/react";
+import { useRef } from "react";
+
 export const Experience = () => {
+  const titleRef = useRef(null);
+  const isTitleInView = useInView(titleRef, { once: true });
+
   const experiences: {
     position: string;
     company: string;
@@ -59,16 +65,34 @@ export const Experience = () => {
     },
   ];
   return (
-    <section id="experience" className="animate-fade-in">
-      <h2 className="font-display font-light text-xl md:text-2xl">
+    <section id="experience">
+      <h2
+        ref={titleRef}
+        className={`font-display font-light text-xl md:text-2xl transition-all duration-1000 ease-in-out transform ${
+          isTitleInView
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-10"
+        }`}
+      >
         experience
       </h2>
 
-      <div className="flex flex-col ">
+      <div className="flex flex-col">
         {experiences.map(
           ({ position, company, date, styling, link, description }, i) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
+
             return (
-              <div key={i} className="my-5 md:my-7">
+              <div
+                key={i}
+                ref={ref}
+                className={`my-5 md:my-7 transition-all duration-1000 ease-in-out transform ${
+                  isInView
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-10"
+                }`}
+              >
                 <div className="flex flex-col md:flex-row gap-1 md:gap-2">
                   <h2 className="text-xl md:text-2xl text-(--color-dark)">
                     {position}

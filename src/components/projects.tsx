@@ -1,4 +1,4 @@
-import { type ReactElement } from "react";
+import { useRef, type ReactElement } from "react";
 import { FaGithub, FaReact, FaSpotify, FaYelp } from "react-icons/fa";
 import {
   SiMui,
@@ -14,6 +14,7 @@ import { IoLogoFirebase, IoLogoVercel } from "react-icons/io5";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { MdArrowOutward } from "react-icons/md";
 import { ChartJsIcon } from "../assets/icons/ChartJsIcon";
+import { useInView } from "motion/react";
 
 import wanderImage from "/pictures/wander.webp";
 import statifyImage from "/pictures/statify.webp";
@@ -22,6 +23,9 @@ import portfolioV2Image from "/pictures/portfolioV2.webp";
 import rendezviewImage from "/pictures/rendezview.webp";
 
 export const Projects = () => {
+  const titleRef = useRef(null);
+  const isTitleInView = useInView(titleRef, { once: true });
+
   const projects: {
     name: string;
     nameStyling?: string;
@@ -120,88 +124,114 @@ export const Projects = () => {
       ],
     },
   ];
+
   return (
-    <section id="projects" className="animate-fade-in">
+    <section
+      id="projects"
+      ref={titleRef}
+      className={`transition-all duration-1000 ease-in-out transform ${
+        isTitleInView
+          ? "opacity-100 translate-x-0"
+          : "opacity-0 -translate-x-10"
+      }`}
+    >
       <h2 className="font-display font-light text-xl md:text-2xl">projects</h2>
 
-      {projects.map(
-        (
-          { name, nameStyling, description, skills, link, githubLink, picture },
-          index
-        ) => {
-          return (
-            <div
-              key={index}
-              className="flex flex-row justify-start gap-2 width-full"
-            >
-              <div className="flex flex-col w-full">
-                {/* top line (name + skills) */}
-                <div className="my-5 md:my-7 w-full flex flex-col justify-between">
-                  <div className="flex justify-between flex-wrap flex-col md:flex-row gap-1 md:gap-2">
-                    {/* name + link */}
-                    <div className="flex flex-row gap-1 md: gap-2">
-                      <a
-                        href={link}
-                        className={`text-xl md:text-2xl text-(--color-dark) flex flex-row gap-2 ${
-                          link || githubLink ? nameStyling : <></>
-                        }`}
-                      >
-                        {name}
-                        {link ? <MdArrowOutward /> : <></>}{" "}
-                      </a>
-                      <a
-                        href={githubLink}
-                        className={`text-xl md:text-2xl text-(--color-dark) flex flex-row gap-2 ${
-                          link || githubLink ? nameStyling : <></>
-                        }`}
-                      >
-                        {githubLink ? <FaGithub /> : <></>}
-                      </a>
-                    </div>
-
-                    {/* skills icons */}
-                    <div className="font-display font-light text-(--color-grey) text-sm md:text-base">
-                      {skills.map((skill, i) => (
-                        <div
-                          key={i}
-                          className="relative group inline-block mr-3 md:mr-5"
+      <div className="flex flex-col gap-5 md:gap-10">
+        {projects.map(
+          (
+            {
+              name,
+              nameStyling,
+              description,
+              skills,
+              link,
+              githubLink,
+              picture,
+            },
+            index
+          ) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
+            return (
+              <div
+                key={index}
+                ref={ref}
+                className={`flex flex-row justify-start gap-2 w-full transition-all duration-1000 ease-in-out transform ${
+                  isInView
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 -translate-x-10"
+                }`}
+              >
+                <div className="flex flex-col w-full">
+                  {/* top line (name + skills) */}
+                  <div className="my-5 md:my-7 w-full flex flex-col justify-between">
+                    <div className="flex justify-between flex-wrap flex-col md:flex-row gap-1 md:gap-2">
+                      {/* name + link */}
+                      <div className="flex flex-row gap-1 md: gap-2">
+                        <a
+                          href={link}
+                          className={`text-xl md:text-2xl text-(--color-dark) flex flex-row gap-2 ${
+                            link || githubLink ? nameStyling : <></>
+                          }`}
                         >
-                          <span className="text-base md:text-xl inline-block hover:-translate-y-0.5 duration-300 ">
-                            {skill.icon}
-                          </span>
-                          <span className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-7 md:bottom-10 px-2 py-1 text-sm text-white bg-(--color-grey) rounded hidden group-hover:block transition-all">
-                            {skill.name}
-                          </span>
-                        </div>
-                      ))}
+                          {name}
+                          {link ? <MdArrowOutward /> : <></>}{" "}
+                        </a>
+                        <a
+                          href={githubLink}
+                          className={`text-xl md:text-2xl text-(--color-dark) flex flex-row gap-2 ${
+                            link || githubLink ? nameStyling : <></>
+                          }`}
+                        >
+                          {githubLink ? <FaGithub /> : <></>}
+                        </a>
+                      </div>
+
+                      {/* skills icons */}
+                      <div className="font-display font-light text-(--color-grey) text-sm md:text-base">
+                        {skills.map((skill, i) => (
+                          <div
+                            key={i}
+                            className="relative group inline-block mr-3 md:mr-5"
+                          >
+                            <span className="text-base md:text-xl inline-block hover:-translate-y-0.5 duration-300 ">
+                              {skill.icon}
+                            </span>
+                            <span className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-7 md:bottom-10 px-2 py-1 text-sm text-white bg-(--color-grey) rounded hidden group-hover:block transition-all">
+                              {skill.name}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
+
+                    {/* description */}
+                    <p className="font-display font-light text-(--color-lightgrey) text-sm md:text-base mt-1">
+                      {description}
+                    </p>
                   </div>
 
-                  {/* description */}
-                  <p className="font-display font-light text-(--color-lightgrey) text-sm md:text-base mt-1">
-                    {description}
-                  </p>
+                  {/* picture */}
+                  {picture && (
+                    <div
+                      className={
+                        "transition-all duration-500 ease-in-out overflow-hidden flex justify-center"
+                      }
+                    >
+                      <img
+                        src={picture}
+                        alt={`${name} screenshot`}
+                        className="object-cover w-full h-auto transition-opacity duration-500 ease-in-out"
+                      />
+                    </div>
+                  )}
                 </div>
-
-                {/* picture */}
-                {picture && (
-                  <div
-                    className={
-                      "transition-all duration-500 ease-in-out overflow-hidden flex justify-center"
-                    }
-                  >
-                    <img
-                      src={picture}
-                      alt={`${name} screenshot`}
-                      className="object-cover w-full h-auto transition-opacity duration-500 ease-in-out"
-                    />
-                  </div>
-                )}
               </div>
-            </div>
-          );
-        }
-      )}
+            );
+          }
+        )}
+      </div>
     </section>
   );
 };

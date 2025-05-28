@@ -1,6 +1,18 @@
+import { useInView } from "motion/react";
+import { useRef } from "react";
+
 export const AboutMe = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section id="aboutMe" className="animate-fade-in">
+    <section
+      id="aboutMe"
+      ref={ref}
+      className={`duration-1000 ease-in-out transform ${
+        isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+      }`}
+    >
       <h1 className="text-2xl/8 md:text-4xl/12">
         <span className="text-(--color-lightgrey) hover:animate-bounce cursor-minion md:underline decoration-dotted hover:decoration-yellow-500 hover:text-(--color-grey) transition-all duration-300 ease-in-out inline-block">
           Bello
